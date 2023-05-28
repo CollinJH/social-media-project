@@ -66,6 +66,20 @@ SocialNetwork Class
 
 ** end SocialNetwork class **
 
+** start Menu class **
+
+Menu Class
+
+    This class will take in the bank of users from the generated network
+    it will allow the user to manipulate this bank of users and create new users through choice of input
+
+    there will be a system menu
+
+    there will be a user menu, after the user has picked a profile to login into
+
+
+** end Menu class **
+
 
 
 
