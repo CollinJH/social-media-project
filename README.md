@@ -28,7 +28,7 @@ The Data structures I will be using will be a List and a Dictionary
 - HasedDictionary is chosen for the second, this will store the profiles, where the key will be the firstName and the value being the profile object
 - This will allow for search for profiles based on firstName
 - A hashed implementation will be better suited for this, this is because when searching for profiles preservation of insertion order is not important
-- This will allow us a constant O(1) search time until hash collisions occur (multiple users of the same name)
+- This will allow us a constant O(1) search time, as well as permit duplicates and hash collisions from occuring (profiles with the same name)
 
 2. Show in your code where you used these data structures and where you created objects of their classes
 3. Is an array, a data structure? Why?

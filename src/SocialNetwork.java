@@ -74,7 +74,15 @@ public class SocialNetwork {
     public void modifyProfile(Profile profile, String newName) throws UserAlreadyExistsException {
         if (profile.getName().toLowerCase() != null) {
             newName = newName.toLowerCase();
+            String oldProfileName = profile.getName().toLowerCase();
+            try {
+                leaveNetwork(oldProfileName);
+            } catch (SocialNetwork.NoSuchUserException e) {
+                e.printStackTrace();
+            }
             profile.setName(newName);
+            joinNetwork(profile);
+            
         }
 
 

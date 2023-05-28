@@ -27,6 +27,25 @@ public class Profile {
 
     }
 
+    // will print out all information of this profile object
+    public void printInfo() {
+        System.out.printf("%s", "\nName | Age | Status \n");
+        System.out.printf("%s%s%d%s%s%s", name, "  ", age, "   ", status, "\n");
+        printFriends();
+        
+    }
+    
+    // method to print out friends list
+    public void printFriends() {
+        System.out.println("Friends List: ");
+        if (friends.getLength() == 0) {
+            System.out.println("No friends... :(");
+        }
+        for (int i = 1; i <= friends.getLength(); i++) {
+            System.out.println(friends.getEntry(i).getName());
+        }
+    }
+
     // getters and setters
 
     public String getName() {

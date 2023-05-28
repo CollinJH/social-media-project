@@ -769,14 +769,6 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
 
         // Sets the state of this entry to current.
 
-        private void setToIn() // Not used
-
-        {
-
-            state = States.CURRENT; // Entry in use
-
-        } // end setToIn
-
     } // end TableEntry
 
 } // end HashedDictionary

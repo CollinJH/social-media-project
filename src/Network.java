@@ -22,14 +22,25 @@ public class Network {
         Profile user1 = network.searchProfile("Steven");
         Profile user2 = network.searchProfile("Jasmine");
         Profile user3 = network.searchProfile("Sammy");
+        Profile user4 = network.searchProfile("Billy");
+        Profile user5 = network.searchProfile("Adam");
+        Profile user6 = network.searchProfile("Jackie");
 
         user1.addFriend(user2);
         user2.addFriend(user3);
         user3.addFriend(user2);
+        user6.addFriend(user1);
+        user6.addFriend(user2);
+        user6.addFriend(user3);
+        user5.addFriend(user4);
 
+        
         user1.setOnline();
         user2.setBusy();
         user3.setOffline();
+        user4.setBusy();
+
+        user5.setAge(24);
 
 
         } catch (SocialNetwork.NoSuchUserException e) {
@@ -39,6 +50,8 @@ public class Network {
 
         // pass network as a parameter
         Menu menu = new Menu(network);
+
+        // start
         menu.DisplayMenu();
 
 
