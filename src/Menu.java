@@ -30,7 +30,7 @@ public class Menu {
         return new Profile(firstName, age);
     }
 
-    public void manageFriendsList() {
+    /* public void manageFriendsList() {
 
 
         // view friends information
@@ -38,5 +38,7 @@ public class Menu {
             System.out.println(friends.getEntry(i).getName());
         }
     }
+
+    */
     
 }

@@ -12,7 +12,10 @@ public class Network {
 
         // created simulated user accounts
         users.joinNetwork(new Profile("Kendal", 23));
-        
+        users.joinNetwork(new Profile("Adam", 29));
+        users.joinNetwork(new Profile("Steven", 34));
+
+
 
 
 
