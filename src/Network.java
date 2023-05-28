@@ -11,6 +11,11 @@ public class Network {
     public static void main(String[] args) {
 
         // create simulated user accounts
+        // creating a network object will allow us to manipulate the dictionary
+        // here in main we create new profiles
+        // and new profile objects
+        // we can manipulate these when we run the program
+
         try {
         network.createProfile("Sammy", 23);
         network.createProfile("Steven", 34);
@@ -44,10 +49,9 @@ public class Network {
 
 
         } catch (SocialNetwork.NoSuchUserException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        
         // pass network as a parameter
         Menu menu = new Menu(network);
 

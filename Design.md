@@ -21,14 +21,6 @@ Profile Class
 
     // satisfy conditions create, read, update, and delete
 
-    getName
-
-    setName
-
-    getStatus
-
-    setStatus
-
     getList<friends>
 
     addFriend

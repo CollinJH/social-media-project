@@ -15,7 +15,13 @@ This project will incorporate the design and implementation of an application th
 
 ## Design Idea:
 
-The Data structures I will be using will be a List and a Dictionary
+The Data structures I will be using will be a ArrayList and a HashedDictionary
+
+An ArrayList will allow me to store lists of friends for each profile dynamically
+
+A HashedDictionary will allow me to create a network of profiles
+I will associate the key, the name, to the profile, the value
+This will allow for ease of manipulation, and ensurance that there is no duplicates
 
 - Create: Add profile - Add friends
 - Read: Read the information of a profile - Search for other profiles
@@ -23,8 +29,8 @@ The Data structures I will be using will be a List and a Dictionary
 - Delete: Delete a profile - Delete a friend of a profile
 
 ## How to use
-1. git clone the repo into a directory
-2. compile and execute network.java
+1. Git clone the repo into a directory
+2. Compile and execute network.java
 
 ## Questions:
 1. What data structures did you use and why

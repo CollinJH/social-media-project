@@ -5,6 +5,7 @@ public class Menu {
 
     static Scanner myScanner = new Scanner(System.in);
 
+    // 
     private SocialNetwork existingUsers;
     private Profile currentUser;
 
