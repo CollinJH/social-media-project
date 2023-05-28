@@ -1,11 +1,12 @@
+import java.util.Iterator;
+import java.util.Arrays;
 
-
-public class NetworkUsers {
+public class SocialNetwork {
     
     
     private HashedDictionary<String, Profile> profiles;
 
-    public NetworkUsers() {
+    public SocialNetwork() {
         profiles = new HashedDictionary<>();
     }
 
@@ -17,12 +18,53 @@ public class NetworkUsers {
         profiles.add(profile.getName().toLowerCase(), profile);
     }
 
-    public void leaveNetwork(Profile profile) throws NoSuchUserException {
-        if (profiles.getValue(profile.getName().toLowerCase()) == null) {
+    // takes a userName aka key as a argument
+    // checks if that user exists in the network
+    // if it does removes that profile
+
+    public void leaveNetwork(String userName) throws NoSuchUserException {
+        if (profiles.getValue(userName) == null) {
             throw new NoSuchUserException();
         } else {
-            profiles.remove(profile.getName().toLowerCase());
+            profiles.remove(userName);
         }
+    }
+
+    // method to create a new profile
+    // after creating a profile will try to join the network
+    // will not be able to with duplicate username under the useralreadyexistsexception
+
+    public void createProfile(String name, int age) {
+        Profile profile = new Profile(name, age);
+        try {
+            joinNetwork(profile);
+        } catch (SocialNetwork.UserAlreadyExistsException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    // creates an arraylist of all the profile names
+    // adds each profile name entry into a new result array
+    // returns that array as a string
+    
+    public String getAllProfiles() {
+        ListInterface<String> profileNames = new AList<>();
+
+        Iterator<String> valIterator = profiles.getKeyIterator();
+
+        while (valIterator.hasNext()) {
+            profileNames.add(valIterator.next());
+        }
+
+        int n = profileNames.getLength();
+
+        String[] result = new String[n];
+        for(int i = 1; i <= n; i++) {
+            result[i - 1] = profileNames.getEntry(i);
+        }
+        return Arrays.toString(result);
+        
     }
 
     // this will essentially change the name of the profile and the key
@@ -38,6 +80,8 @@ public class NetworkUsers {
 
     }
 
+    // this method will search for the key value username
+    // returns the key value username if it is found
     public Profile searchProfile(String userName) throws NoSuchUserException {
         userName = userName.toLowerCase();
         if (profiles.getValue(userName) == null) {
@@ -45,6 +89,7 @@ public class NetworkUsers {
         }
         return profiles.getValue(userName);
     }
+
 
     // creating a subclass of class exception
     // two constructors
