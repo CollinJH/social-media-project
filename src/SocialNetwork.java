@@ -3,13 +3,17 @@ import java.util.Arrays;
 
 public class SocialNetwork {
     
-    
+    // the dictionary of profiles
     private HashedDictionary<String, Profile> profiles;
 
+    // constructor create a new hasheddictionary
     public SocialNetwork() {
         profiles = new HashedDictionary<>();
     }
 
+    // takes in a profile as an argument
+    // checks to see if the profile is already in the dictionary
+    // if not the profile is added
     public void joinNetwork(Profile profile) throws UserAlreadyExistsException {
         if (profiles.contains(profile.getName().toLowerCase())) {
             throw new UserAlreadyExistsException();
